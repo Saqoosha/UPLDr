@@ -1,0 +1,112 @@
+/* line 3, ../../src/index.sass */
+*, h1 {
+  font-family: "Crete Round", serif;
+  font-style: italic; }
+
+/* line 7, ../../src/index.sass */
+a {
+  color: #00a4e4; }
+
+/* line 10, ../../src/index.sass */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background-color: #fffcee;
+  font-family: "Crete Round", serif;
+  font-style: italic; }
+
+/* line 21, ../../src/index.sass */
+body > div.main {
+  display: table;
+  width: 100%;
+  height: 100%; }
+  /* line 25, ../../src/index.sass */
+  body > div.main > div {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle; }
+
+/* line 33, ../../src/index.sass */
+.circle {
+  display: table;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  background-color: #f6d7e7;
+  border-radius: 300px;
+  box-shadow: 0 6px 12px -4px #e09fc1;
+  -webkit-transition: all 0.15s cubic-bezier(0, 0.5, 0.35, 1);
+  -webkit-transition-delay: 0;
+  -moz-transition: all 0.15s cubic-bezier(0, 0.5, 0.35, 1) 0;
+  -o-transition: all 0.15s cubic-bezier(0, 0.5, 0.35, 1) 0;
+  transition: all 0.15s cubic-bezier(0, 0.5, 0.35, 1) 0; }
+  /* line 43, ../../src/index.sass */
+  .circle > .mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-transition: all 0.1s ease-out, 0;
+    -moz-transition: all 0.1s ease-out, 0;
+    -o-transition: all 0.1s ease-out, 0;
+    transition: all 0.1s ease-out, 0; }
+    /* line 49, ../../src/index.sass */
+    .circle > .mask > .fill {
+      width: 300px;
+      height: 300px;
+      background-color: white;
+      border: 1px solid #f6d7e7;
+      border-radius: 300px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+  /* line 56, ../../src/index.sass */
+  .circle > .inner {
+    position: relative;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: #333333; }
+    /* line 62, ../../src/index.sass */
+    .circle > .inner > p {
+      width: 70%;
+      margin: auto; }
+
+/* line 66, ../../src/index.sass */
+#selectfile {
+  padding-top: 10px;
+  pointer-events: none; }
+
+/* line 71, ../../src/index.sass */
+#progress {
+  display: none;
+  padding-top: 10px; }
+  /* line 75, ../../src/index.sass */
+  #progress #filename {
+    width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: auto; }
+
+/* line 81, ../../src/index.sass */
+#result {
+  display: none; }
+  /* line 83, ../../src/index.sass */
+  #result #copy-button.zeroclipboard-is-hover {
+    color: #333333;
+    background-color: #ebebeb;
+    border-color: #adadad; }
+  /* line 87, ../../src/index.sass */
+  #result #copy-button.zeroclipboard-is-active {
+    color: #333333;
+    background-color: #ebebeb;
+    background-image: none;
+    border-color: #adadad;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }

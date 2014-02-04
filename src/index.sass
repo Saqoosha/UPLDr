@@ -1,0 +1,94 @@
+@import "compass"
+
+*, h1
+  font-family: 'Crete Round', serif
+  font-style: italic
+
+a
+  color: #00a4e4
+
+html, body
+  width: 100%
+  height: 100%
+  overflow: hidden
+  padding: 0
+  margin: 0
+  background-color: #fffcee
+  font-family: 'Crete Round', serif
+  font-style: italic
+
+body
+  > div.main
+    display: table
+    width: 100%
+    height: 100%
+    > div
+      display: table-cell
+      text-align: center
+      vertical-align: middle
+
+$circleSize: 300px
+$circleColor: #f6d7e7
+
+.circle
+  display: table
+  position: relative
+  width: $circleSize
+  height: $circleSize
+  margin: auto
+  background-color: $circleColor
+  border-radius: $circleSize
+  box-shadow: 0 6px 12px -4px #E09FC1
+  @include transition(all 0.15s cubic-bezier(0,0.5,0.35,1) 0)
+  > .mask
+    position: absolute
+    width: 100%
+    height: 100%
+    overflow: hidden
+    @include transition(all 0.1s ease-out, 0)
+    > .fill
+      width: $circleSize
+      height: $circleSize
+      background-color: white
+      border: 1px solid $circleColor
+      border-radius: $circleSize
+      @include box-sizing(border-box)
+  > .inner
+    position: relative
+    display: table-cell
+    text-align: center
+    vertical-align: middle
+    color: #333
+    > p
+      width: 70%
+      margin: auto
+
+#selectfile
+  // display: none
+  padding-top: 10px
+  pointer-events: none
+
+#progress
+  display: none
+  padding-top: 10px
+
+  #filename
+    width: 250px
+    overflow: hidden
+    text-overflow: ellipsis
+    margin: auto
+
+#result
+  display: none
+  #copy-button.zeroclipboard-is-hover
+    color: #333
+    background-color: #ebebeb
+    border-color: #adadad
+  #copy-button.zeroclipboard-is-active
+    color: #333
+    background-color: #ebebeb
+    background-image: none
+    border-color: #adadad
+    outline: 0
+    @include box-shadow(inset 0 3px 5px rgba(0,0,0,0.125))
+

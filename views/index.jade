@@ -1,0 +1,45 @@
+extends _layout
+
+block head
+  script(src='/scripts/jquery.transit.min.js')
+  script(src='/scripts/jquery.ui.widget.js')
+  script(src='/scripts/jquery.iframe-transport.js')
+  script(src='/scripts/jquery.fileupload.js')
+  script(src='/scripts/ZeroClipboard.min.js')
+  script(src='/scripts/index.js')
+
+block body
+  div.circle
+    div.mask
+      div.fill
+    div.inner
+      div#selectfile
+        h1 Drop file here
+        p or click to select
+        input(id='fileupload', type='file', name='hoge' data-url='/upload')
+      div#progress
+        h1 Uploading...
+        p#filename aoeaoeurcahroeuaoreguragoerucgaroegruaoeuraoeucegorgua
+        p#percent 0%
+      div#result
+        h1 Done!
+        p
+          a.download-link(href='#', target='_blank') http://saqoo.sh/a/
+          br
+          | Password: 
+          a#password(href='javascript:;', data-toggle='popover', data-placement='right') aoeuaoeu
+          br
+          | Expires in 
+          a#expiration(href='javascript:;', data-toggle='popover', data-placement='right') 3 hours
+        button#copy-button.btn.btn-default.btn-sm Copy Link
+
+        div#password-popout.btn-group-vertical
+          button.btn.btn-default No password
+          button.btn.btn-default Generate new
+        div#expiration-popout.btn-group-vertical
+          button.btn.btn-default 3 hours
+          button.btn.btn-default 6 hours
+          button.btn.btn-default 12 hours
+          button.btn.btn-default 1 day
+          button.btn.btn-default 3 days
+          button.btn.btn-default 1 week
