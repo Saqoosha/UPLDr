@@ -46,6 +46,7 @@ $ ->
   client.on 'load', -> button.show()
 
   $('#password').popover
+    container: 'body'
     html: true
     content: $('#password-popout').remove().on 'click', 'button', (e) ->
       switch $(this).text()
@@ -63,6 +64,7 @@ $ ->
           updateCopyInfo()
 
   $('#expiration').popover
+    container: 'body'
     html: true
     content: $('#expiration-popout').remove().on 'click', 'button', (e) ->
       t = $(this).text()
