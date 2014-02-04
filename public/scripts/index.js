@@ -1,22 +1,20 @@
 (function() {
   $(function() {
-    var NO_PASSWORD, button, client, current, dropZone, updateCopyInfo, waiting;
+    var NO_PASSWORD, button, client, current, dropZone, updateCopyInfo;
     $(document).on('drop dragover', function(e) {
       return e.preventDefault();
     });
     dropZone = $('.circle').css({
       cursor: 'pointer'
     });
-    waiting = true;
     $('#fileupload').fileupload({
       dropZone: dropZone,
       dataType: 'json',
       add: function(e, data) {
-        if (!waiting) {
+        if (data.originalFiles.length !== 1) {
+          alert('Only accept a single file at one time.');
           return;
         }
-        waiting = false;
-        console.log('add', data);
         dropZone.css({
           cursor: 'auto'
         }).off().transition({

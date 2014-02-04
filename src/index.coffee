@@ -2,14 +2,13 @@ $ ->
   $(document).on 'drop dragover', (e) -> e.preventDefault()
 
   dropZone = $('.circle').css(cursor: 'pointer')
-  waiting = true
   $('#fileupload').fileupload
     dropZone: dropZone
     dataType: 'json'
     add: (e, data) ->
-      return if not waiting
-      waiting = false
-      console.log('add', data)
+      if data.originalFiles.length isnt 1
+        alert('Only accept a single file at one time.')
+        return
       dropZone.css(cursor: 'auto').off().transition(scale: 1.0, 100)
       $('#filename').text(data.files[0].name)
       $('#selectfile').fadeOut 200, ->
