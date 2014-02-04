@@ -2,6 +2,7 @@
 ###
 Module dependencies.
 ###
+CONFIG = require('config')
 express = require('express')
 http = require('http')
 path = require('path')
@@ -44,13 +45,19 @@ app.configure 'development', ->
 allFiles = {}
 
 
+# need auth?
+auth = []
+if CONFIG.auth?.enabled
+  auth.push express.basicAuth(CONFIG.auth.user, CONFIG.auth.password)
+
+
 # route definitions
-app.get '/', (req, res) ->
+app.get '/', auth, (req, res) ->
   req.session = null
   res.render 'index'
 
 
-app.post '/upload', (req, res) ->
+app.post '/upload', auth, (req, res) ->
   form = new formidable.IncomingForm()
   form.uploadDir = UPLOAD_DIR
   form.parse req, (err, fields, files) ->
@@ -65,7 +72,7 @@ app.post '/upload', (req, res) ->
       name: info.name
       type: info.type
       created: now
-      timeout: now + 3 * 60 * 60 * 1000
+      timeout: now + 3 * 60 * 60 * 1000 # default 3 hours
       password: hashPassword(password)
     req.session.fileId = id
     logger.debug('uploaded', allFiles[id])
@@ -126,7 +133,7 @@ app.post /\/([a-f0-9]{6})$/, (req, res) ->
     res.render 'password', id: req.body.id, error: true
 
 
-app.post '/set', (req, res) ->
+app.post '/set', auth, (req, res) ->
   info = allFiles[req.session.fileId]
   if not info
     res.json(400, success: false, message: 'Bad request')

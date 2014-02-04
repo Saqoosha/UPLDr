@@ -1,0 +1,4 @@
+auth:
+  enabled: false
+  user: hoge
+  password: hoge
