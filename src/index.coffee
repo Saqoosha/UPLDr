@@ -5,10 +5,12 @@ $ ->
   $('#fileupload').fileupload
     dropZone: dropZone
     dataType: 'json'
-    add: (e, data) ->
-      if data.originalFiles.length isnt 1
+    drop: (e, data) ->
+      if data.files.length isnt 1
+        e.preventDefault()
+        dropZone.transition(scale: 1.0, 100)
         alert('Only accept a single file at one time.')
-        return
+    add: (e, data) ->
       dropZone.css(cursor: 'auto').off().transition(scale: 1.0, 100)
       $('#filename').text(data.files[0].name)
       $('#selectfile').fadeOut 200, ->

@@ -10,11 +10,16 @@
     $('#fileupload').fileupload({
       dropZone: dropZone,
       dataType: 'json',
-      add: function(e, data) {
-        if (data.originalFiles.length !== 1) {
-          alert('Only accept a single file at one time.');
-          return;
+      drop: function(e, data) {
+        if (data.files.length !== 1) {
+          e.preventDefault();
+          dropZone.transition({
+            scale: 1.0
+          }, 100);
+          return alert('Only accept a single file at one time.');
         }
+      },
+      add: function(e, data) {
         dropZone.css({
           cursor: 'auto'
         }).off().transition({
