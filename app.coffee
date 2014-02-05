@@ -168,13 +168,9 @@ app.post '/set', auth, (req, res) ->
 # periodically cleanup expired files
 setInterval ->
   now = Date.now()
-  removed = []
-  for id, info of allFiles
-    removed.push(id) if info.timeout < now
-  for id in removed
-    info = allFiles[id]
-    logger.debug('remove', info)
-    if info.path
+  for info in allFiles
+    if info.timeout < now and info.path
+      logger.debug('remove', info)
       fs.unlinkSync(info.path)
       delete info.path
 , CLEANUP_INTERVAL * 1000
