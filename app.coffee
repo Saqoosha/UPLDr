@@ -177,8 +177,11 @@ setInterval ->
 
 
 # clear all uploaded files on startup
-for file in fs.readdirSync(UPLOAD_DIR)
-  fs.unlinkSync(path.join(UPLOAD_DIR, file))
+if fs.existsSync(UPLOAD_DIR)
+  for file in fs.readdirSync(UPLOAD_DIR)
+    fs.unlinkSync(path.join(UPLOAD_DIR, file))
+else
+  fs.mkdirSync(UPLOAD_DIR)
 
 
 # start server
