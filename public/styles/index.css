@@ -110,3 +110,16 @@ body > div.main {
     -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+
+/* line 95, ../../src/index.sass */
+#source {
+  position: absolute;
+  bottom: 5px;
+  right: 10px; }
+  /* line 99, ../../src/index.sass */
+  #source > a {
+    color: #dddddd; }
+    /* line 101, ../../src/index.sass */
+    #source > a:hover {
+      color: #2a6496;
+      text-decoration: underline; }
