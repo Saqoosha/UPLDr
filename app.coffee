@@ -14,10 +14,11 @@ log4js = require('log4js')
 app = express()
 logger = log4js.getLogger()
 
-UPLOAD_DIR = path.join(__dirname, 'tmp')
+UPLOAD_DIR = process.env.UPLOAD_DIR || path.join(__dirname, 'tmp')
+CLEANUP_INTERVAL = process.env.CLEANUP_INTERVAL || 60 * 60 # 1 hour
+EXPIRE_TIMEOUT = process.env.EXPIRE_TIMEOUT || 3 * 60 * 60 # 3 hours
+FORCE_EXPIRE_TIMEOUT = process.env.FORCE_EXPIRE_TIMEOUT || 24 * 60 * 60 # 24 hours
 SALT = Math.random().toString()
-CLEANUP_INTERVAL = 3600 # 1 hour
-
 
 # all environments
 app.set 'port', process.env.PORT or 3000
@@ -72,7 +73,7 @@ app.post '/upload', auth, (req, res) ->
       name: info.name
       type: info.type
       created: now
-      timeout: now + 3 * 60 * 60 * 1000 # default 3 hours
+      timeout: now + EXPIRE_TIMEOUT * 1000
       password: hashPassword(password)
     req.session.fileId = id
     logger.debug('uploaded', allFiles[id])
@@ -168,11 +169,14 @@ app.post '/set', auth, (req, res) ->
 # periodically cleanup expired files
 setInterval ->
   now = Date.now()
-  for info in allFiles
+  for id, info of allFiles
     if info.timeout < now and info.path
-      logger.debug('remove', info)
+      logger.debug("remove: #{id}", info)
       fs.unlinkSync(info.path)
       delete info.path
+    else if info.timeout + FORCE_EXPIRE_TIMEOUT * 1000 < now
+      logger.debug("force remove: #{id}", info)
+      delete allFiles[id]
 , CLEANUP_INTERVAL * 1000
 
 
