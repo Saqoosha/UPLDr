@@ -6,6 +6,7 @@
         "start": "coffee app.coffee"
     },
     "dependencies": {
+        "coffee-script": "1.7",
         "express": "3.4.8",
         "jade": "*",
         "formidable": "~1.0.14",
