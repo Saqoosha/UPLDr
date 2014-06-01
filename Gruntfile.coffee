@@ -11,6 +11,7 @@ module.exports = (grunt) ->
 
     coffee:
       'public/scripts/index.js': 'src/index.coffee'
+      'public/scripts/download.js': 'src/download.coffee'
 
     watch:
       html:
