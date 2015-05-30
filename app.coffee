@@ -16,7 +16,7 @@ logger = log4js.getLogger()
 
 UPLOAD_DIR = process.env.UPLOAD_DIR || path.join(__dirname, 'tmp')
 CLEANUP_INTERVAL = process.env.CLEANUP_INTERVAL || 60 * 60 # 1 hour
-EXPIRE_TIMEOUT = process.env.EXPIRE_TIMEOUT || 3 * 60 * 60 # 3 hours
+EXPIRE_TIMEOUT = process.env.EXPIRE_TIMEOUT || 7 * 24 * 60 * 60 # default to 1 week
 FORCE_EXPIRE_TIMEOUT = process.env.FORCE_EXPIRE_TIMEOUT || 24 * 60 * 60 # 24 hours
 SALT = Math.random().toString()
 

@@ -49,21 +49,20 @@ body > div.main {
   margin: auto;
   background-color: #f6d7e7;
   border-radius: 350px;
-  box-shadow: 0 6px 12px -4px #e09fc1;
-  -webkit-transition: all 0.15s cubic-bezier(0, 0.5, 0.35, 1);
-  -webkit-transition-delay: 0;
-  -moz-transition: all 0.15s cubic-bezier(0, 0.5, 0.35, 1) 0;
-  -o-transition: all 0.15s cubic-bezier(0, 0.5, 0.35, 1) 0;
-  transition: all 0.15s cubic-bezier(0, 0.5, 0.35, 1) 0; }
+  box-shadow: 0 6px 12px -4px #E09FC1;
+  -moz-transition: all 0.15s 0;
+  -o-transition: all 0.15s 0;
+  -webkit-transition: all 0.15s 0;
+  transition: all 0.15s 0; }
   /* line 52, ../../src/index.sass */
   .circle > .mask {
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    -webkit-transition: all 0.1s ease-out, 0;
     -moz-transition: all 0.1s ease-out, 0;
     -o-transition: all 0.1s ease-out, 0;
+    -webkit-transition: all 0.1s ease-out, 0;
     transition: all 0.1s ease-out, 0; }
     /* line 58, ../../src/index.sass */
     .circle > .mask > .fill {
@@ -72,8 +71,8 @@ body > div.main {
       background-color: white;
       border: 2px solid #f6d7e7;
       border-radius: 350px;
-      -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
       box-sizing: border-box; }
   /* line 65, ../../src/index.sass */
   .circle > .inner {
@@ -81,7 +80,7 @@ body > div.main {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
-    color: #333333; }
+    color: #333; }
     /* line 71, ../../src/index.sass */
     .circle > .inner > p {
       width: 70%;
@@ -108,18 +107,18 @@ body > div.main {
   display: none; }
   /* line 92, ../../src/index.sass */
   #result #copy-button.zeroclipboard-is-hover {
-    color: #333333;
+    color: #333;
     background-color: #ebebeb;
     border-color: #adadad; }
   /* line 96, ../../src/index.sass */
   #result #copy-button.zeroclipboard-is-active {
-    color: #333333;
+    color: #333;
     background-color: #ebebeb;
     background-image: none;
     border-color: #adadad;
     outline: 0;
-    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
 
 /* line 104, ../../src/index.sass */
@@ -129,7 +128,7 @@ body > div.main {
   right: 10px; }
   /* line 108, ../../src/index.sass */
   #source > a {
-    color: #dddddd; }
+    color: #ddd; }
     /* line 110, ../../src/index.sass */
     #source > a:hover {
       color: #2a6496;
