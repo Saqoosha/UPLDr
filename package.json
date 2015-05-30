@@ -9,7 +9,7 @@
         "coffee-script": "1.7",
         "express": "3.4.8",
         "jade": "*",
-        "formidable": "~1.0.14",
+        "formidable": "~1.0.17",
         "log4js": "~0.6.9",
         "config": "~0.4.35",
         "js-yaml": "~3.0.1"

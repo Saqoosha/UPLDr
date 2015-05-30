@@ -65,8 +65,8 @@ app.post '/upload', auth, (req, res) ->
     throw err if err
     info = files.hoge
     now = Date.now()
-    id = path.basename(info.path).substr(0, 6)
-    password = path.basename(info.path).substr(16, 4)
+    id = path.basename(info.path).substr(-6)
+    password = path.basename(info.path).substr(-10, 4)
     allFiles[id] =
       size: info.size
       path: info.path
