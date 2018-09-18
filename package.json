@@ -1,23 +1,23 @@
 {
-    "name": "UPLDr",
-    "version": "0.0.1",
-    "private": true,
-    "scripts": {
-        "start": "coffee app.coffee"
-    },
-    "dependencies": {
-        "coffee-script": "1.7",
-        "express": "3.4.8",
-        "jade": "*",
-        "formidable": "~1.0.17",
-        "log4js": "~0.6.9",
-        "config": "~0.4.35",
-        "js-yaml": "~3.0.1"
-    },
-    "devDependencies": {
-        "grunt": "~0.4.2",
-        "grunt-contrib-coffee": "~0.9.0",
-        "grunt-contrib-watch": "~0.5.3",
-        "grunt-contrib-compass": "~0.7.1"
-    }
+  "name": "UPLDr",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "coffee app.coffee"
+  },
+  "dependencies": {
+    "coffee-script": "~1.7.1",
+    "express": "3.4.8",
+    "jade": "*",
+    "formidable": "~1.0.17",
+    "log4js": "~0.6.14",
+    "config": "~0.4.36",
+    "js-yaml": "~3.0.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-coffee": "~0.9.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-compass": "~0.7.2"
+  }
 }

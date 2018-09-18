@@ -19,107 +19,117 @@ html, body {
   font-style: italic; }
 
 /* line 21, ../../src/index.sass */
+body .dots {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1; }
+  /* line 26, ../../src/index.sass */
+  body .dots .base {
+    fill: rgba(140, 175, 255, 0.1); }
+/* line 28, ../../src/index.sass */
 body > div.main {
+  position: relative;
+  z-index: 10;
   display: table;
   width: 100%;
   height: 100%; }
-  /* line 25, ../../src/index.sass */
+  /* line 34, ../../src/index.sass */
   body > div.main > div {
     display: table-cell;
     text-align: center;
     vertical-align: middle; }
 
-/* line 33, ../../src/index.sass */
+/* line 42, ../../src/index.sass */
 .circle {
   display: table;
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
   margin: auto;
   background-color: #f6d7e7;
-  border-radius: 300px;
-  box-shadow: 0 6px 12px -4px #e09fc1;
-  -webkit-transition: all 0.15s cubic-bezier(0, 0.5, 0.35, 1);
-  -webkit-transition-delay: 0;
-  -moz-transition: all 0.15s cubic-bezier(0, 0.5, 0.35, 1) 0;
-  -o-transition: all 0.15s cubic-bezier(0, 0.5, 0.35, 1) 0;
-  transition: all 0.15s cubic-bezier(0, 0.5, 0.35, 1) 0; }
-  /* line 43, ../../src/index.sass */
+  border-radius: 350px;
+  box-shadow: 0 6px 12px -4px #E09FC1;
+  -moz-transition: all 0.15s 0;
+  -o-transition: all 0.15s 0;
+  -webkit-transition: all 0.15s 0;
+  transition: all 0.15s 0; }
+  /* line 52, ../../src/index.sass */
   .circle > .mask {
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    -webkit-transition: all 0.1s ease-out, 0;
     -moz-transition: all 0.1s ease-out, 0;
     -o-transition: all 0.1s ease-out, 0;
+    -webkit-transition: all 0.1s ease-out, 0;
     transition: all 0.1s ease-out, 0; }
-    /* line 49, ../../src/index.sass */
+    /* line 58, ../../src/index.sass */
     .circle > .mask > .fill {
-      width: 300px;
-      height: 300px;
+      width: 350px;
+      height: 350px;
       background-color: white;
       border: 2px solid #f6d7e7;
-      border-radius: 300px;
-      -webkit-box-sizing: border-box;
+      border-radius: 350px;
       -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
       box-sizing: border-box; }
-  /* line 56, ../../src/index.sass */
+  /* line 65, ../../src/index.sass */
   .circle > .inner {
     position: relative;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
-    color: #333333; }
-    /* line 62, ../../src/index.sass */
+    color: #333; }
+    /* line 71, ../../src/index.sass */
     .circle > .inner > p {
       width: 70%;
       margin: auto; }
 
-/* line 66, ../../src/index.sass */
+/* line 75, ../../src/index.sass */
 #selectfile {
   padding-top: 10px;
   pointer-events: none; }
 
-/* line 71, ../../src/index.sass */
+/* line 80, ../../src/index.sass */
 #progress {
   display: none;
   padding-top: 10px; }
-  /* line 75, ../../src/index.sass */
+  /* line 84, ../../src/index.sass */
   #progress #filename {
     width: 250px;
     overflow: hidden;
     text-overflow: ellipsis;
     margin: auto; }
 
-/* line 81, ../../src/index.sass */
+/* line 90, ../../src/index.sass */
 #result {
   display: none; }
-  /* line 83, ../../src/index.sass */
+  /* line 92, ../../src/index.sass */
   #result #copy-button.zeroclipboard-is-hover {
-    color: #333333;
+    color: #333;
     background-color: #ebebeb;
     border-color: #adadad; }
-  /* line 87, ../../src/index.sass */
+  /* line 96, ../../src/index.sass */
   #result #copy-button.zeroclipboard-is-active {
-    color: #333333;
+    color: #333;
     background-color: #ebebeb;
     background-image: none;
     border-color: #adadad;
     outline: 0;
-    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
 
-/* line 95, ../../src/index.sass */
+/* line 104, ../../src/index.sass */
 #source {
   position: absolute;
   bottom: 5px;
   right: 10px; }
-  /* line 99, ../../src/index.sass */
+  /* line 108, ../../src/index.sass */
   #source > a {
-    color: #dddddd; }
-    /* line 101, ../../src/index.sass */
+    color: #ddd; }
+    /* line 110, ../../src/index.sass */
     #source > a:hover {
       color: #2a6496;
       text-decoration: underline; }
