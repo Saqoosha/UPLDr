@@ -71,12 +71,15 @@ $ ->
     password = $('#password').text()
     if password isnt NO_PASSWORD
       text += "Password: #{password}\n"
-    $('#copy-button').attr('data-clipboard-text', text)
-
-  ZeroClipboard.config(moviePath: '/scripts/ZeroClipboard.swf')
-  button = $('#copy-button').hide()
-  client = new ZeroClipboard(button)
-  client.on 'load', -> button.show()
+    $('#copy-button').on 'click', (e) ->
+      tmp = $('<textarea />').text text
+      .prop
+        selectionStart: 0
+        selectionEnd: text.length
+      .appendTo(document.body).focus()
+      if not document.execCommand('copy')
+        alert('It is not supported by your browser.')
+      tmp.remove()
 
   $('#password').popover
     container: 'body'
