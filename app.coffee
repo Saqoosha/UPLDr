@@ -89,7 +89,7 @@ checkPassword = (original, challenge) ->
   return original is hashPassword(challenge)
 
 download = (res, info) ->
-  res.set('Content-Disposition', "attachment; filename*=UTF-8''#{encodeURIComponent(info.name)}")
+  res.set('Content-Disposition', "attachment; filename*=UTF-8''#{encodeURIComponent(info.name).replace(/'/g, "%27")}")
   res.sendfile(info.path)
 
 
